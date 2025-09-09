@@ -5,7 +5,7 @@ import com.varosyan.domain.model.BetType
 import com.varosyan.domain.usecase.CalculateOddsUseCase
 
 class CalculateOddsUseCaseImpl : CalculateOddsUseCase {
-    override suspend fun calculateOdds(bets: List<Bet>): List<Bet> {
+    override suspend fun invoke(bets: List<Bet>): List<Bet> {
         return bets.map {
             calculateOdds(it)
         }
