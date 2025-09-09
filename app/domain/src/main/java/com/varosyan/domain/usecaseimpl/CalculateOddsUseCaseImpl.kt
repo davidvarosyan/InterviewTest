@@ -64,14 +64,14 @@ class CalculateOddsUseCaseImpl : CalculateOddsUseCase {
     private fun calculateRegularOdd(bet: Bet): Bet {
         var sellIn = bet.sellIn
         var odds = bet.odds
-        odds = decIfBellowMin(odds, 1)
+        odds = decIfUnderMin(odds, 1)
         sellIn -= 1
-        if (sellIn < 0) odds = decIfBellowMin(odds, 1)
+        if (sellIn < 0) odds = decIfUnderMin(odds, 1)
         return bet.copy(sellIn = sellIn, odds = odds)
     }
 
 
-    private fun decIfBellowMin(odds: Int, count: Int): Int {
+    private fun decIfUnderMin(odds: Int, count: Int): Int {
         var result = odds
         if (odds > ODDS_MIN) {
             result = (odds - count)

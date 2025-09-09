@@ -4,5 +4,5 @@ data class Bet(
     val betType: BetType,
     val sellIn: Int,
     val odds: Int,
-    val imageURL: String
+    val imageURL: String? = null
 )
