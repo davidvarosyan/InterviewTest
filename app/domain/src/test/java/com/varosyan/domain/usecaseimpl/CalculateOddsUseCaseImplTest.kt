@@ -15,7 +15,7 @@ class CalculateOddsUseCaseImplTest {
     /* ---------- Helpers ---------- */
 
     private fun singleResult(bet: Bet): Bet = runBlocking {
-        useCase.calculateOdds(listOf(bet)).single()
+        useCase(listOf(bet)).single()
     }
 
     /* ---------- Regular decay types: WINNING_TEAM, CORNER_KICKS ---------- */
@@ -152,7 +152,7 @@ class CalculateOddsUseCaseImplTest {
             Bet(BetType.FIRST_GOAL_SCORER, sellIn = 3, odds = 99)    // unchanged
         )
 
-        val result = useCase.calculateOdds(bets)
+        val result = useCase(bets)
 
         assertEquals(0, result[0].sellIn);  assertEquals(0,  result[0].odds)
         assertEquals(1, result[1].sellIn);  assertEquals(50, result[1].odds)

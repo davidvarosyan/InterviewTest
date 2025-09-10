@@ -2,10 +2,10 @@ package com.varosyan.domain.common
 
 sealed class Result<out T> {
     data class Success<out T>(val data: T) : Result<T>()
-    data class Error(val exception: Throwable) : Result<Nothing>()
+    data class Error(val exception: Exception) : Result<Nothing>()
 
     inline fun <R> fold(
-        onSuccess: (T) -> R, onError: (Throwable) -> R
+        onSuccess: (T) -> R, onError: (Exception) -> R
     ): R = when (this) {
         is Success -> onSuccess(data)
         is Error -> onError(exception)

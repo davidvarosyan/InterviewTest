@@ -1,10 +1,12 @@
 package com.varosyan.data.service
 
 import com.varosyan.data.model.BetModel
+import kotlinx.coroutines.delay
 
 class FakeServiceImpl : GetBetService, UpdateBetService {
 
     override suspend fun getBets(): List<BetModel> {
+        delay(2000)
         return fakeBets
     }
 

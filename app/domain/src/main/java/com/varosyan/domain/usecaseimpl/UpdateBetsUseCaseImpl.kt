@@ -3,7 +3,7 @@ package com.varosyan.domain.usecaseimpl
 import com.varosyan.domain.common.Result
 import com.varosyan.domain.common.getOrNull
 
-]import com.varosyan.domain.repo.UpdateBetRepo
+import com.varosyan.domain.repo.UpdateBetRepo
 import com.varosyan.domain.usecase.CalculateOddsUseCase
 import com.varosyan.domain.usecase.GetBetsUseCase
 import com.varosyan.domain.usecase.UpdateBetsUseCase
