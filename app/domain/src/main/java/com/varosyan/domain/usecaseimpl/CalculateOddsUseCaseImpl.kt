@@ -58,7 +58,7 @@ class CalculateOddsUseCaseImpl : CalculateOddsUseCase {
     }
 
     private fun calculatePlayerPerformanceOdd(bet: Bet): Bet {
-        return calculateFirstGoalScorerOdd(bet)
+        return calculateRegularOdd(bet)
     }
 
     private fun calculateRegularOdd(bet: Bet): Bet {

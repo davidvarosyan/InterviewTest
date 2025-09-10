@@ -12,7 +12,7 @@ class BetMapper {
             TYPE_PLAYER_PERFORMANCE -> BetType.PLAYER_PERFORMANCE
             TYPE_FIRST_GOAL_SCORER -> BetType.FIRST_GOAL_SCORER
             TYPE_NUMBER_OF_FOULS -> BetType.NUMBER_OF_FOULS
-            TYPE_CORNER_KICKS -> BetType.NUMBER_OF_FOULS
+            TYPE_CORNER_KICKS -> BetType.CORNER_KICKS
             else -> throw RuntimeException("Unknown type")
         }
         return Bet(
@@ -32,7 +32,7 @@ class BetMapper {
             BetType.NUMBER_OF_FOULS -> TYPE_NUMBER_OF_FOULS
             BetType.CORNER_KICKS -> TYPE_CORNER_KICKS
         }
-        return BetModel(betType, sellIn = bet.sellIn, odds = bet.sellIn, imageURL = bet.imageURL)
+        return BetModel(betType, sellIn = bet.sellIn, odds = bet.odds, imageURL = bet.imageURL)
     }
 
     companion object {

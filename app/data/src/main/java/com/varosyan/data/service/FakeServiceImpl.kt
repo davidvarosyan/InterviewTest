@@ -6,7 +6,7 @@ import kotlinx.coroutines.delay
 class FakeServiceImpl : GetBetService, UpdateBetService {
 
     override suspend fun getBets(): List<BetModel> {
-        delay(2000)
+        delay(500)
         return fakeBets
     }
 
